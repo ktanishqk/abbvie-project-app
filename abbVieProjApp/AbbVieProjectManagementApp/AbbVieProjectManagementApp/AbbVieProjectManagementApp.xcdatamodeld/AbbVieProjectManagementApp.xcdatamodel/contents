@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23B2073" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="employeeId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="employeeName" optional="YES" attributeType="String"/>
+        <attribute name="employeePicture" optional="YES" attributeType="Binary"/>
+        <attribute name="employeePosition" optional="YES" attributeType="String"/>
+        <relationship name="project" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="employee" inverseEntity="Project"/>
+    </entity>
+    <entity name="Project" representedClassName="Project" syncable="YES">
+        <attribute name="projectDescription" optional="YES" attributeType="String"/>
+        <attribute name="projectEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="projectName" optional="YES" attributeType="String"/>
+        <attribute name="projectStartDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="employee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="project" inverseEntity="Employee"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="projectName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
