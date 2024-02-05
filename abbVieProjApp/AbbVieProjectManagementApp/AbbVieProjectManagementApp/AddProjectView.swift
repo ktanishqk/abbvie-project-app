@@ -62,7 +62,7 @@ struct AddProjectView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Add Project")
+            .navigationTitle("Generat Project")
         }
     }
 
@@ -71,6 +71,7 @@ struct AddProjectView: View {
             selectedEmployees.remove(employee)
         } else {
             selectedEmployees.insert(employee)
+            
         }
     }
 }
