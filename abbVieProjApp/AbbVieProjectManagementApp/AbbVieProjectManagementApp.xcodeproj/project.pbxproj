@@ -19,6 +19,7 @@
 		3800AC4E2B6D95FA00114DC2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */; };
 		3800AC4F2B6D95FA00114DC2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */; };
 		3800AC512B6DA3C600114DC2 /* ProjectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC502B6DA3C600114DC2 /* ProjectDetailsView.swift */; };
+		D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3800AC502B6DA3C600114DC2 /* ProjectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsView.swift; sourceTree = "<group>"; };
+		D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				3800AC2B2B6D590200114DC2 /* AbbVieProjectManagementAppApp.swift */,
+				D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */,
 				3800AC2D2B6D590200114DC2 /* ContentView.swift */,
 				3800AC3E2B6D5A2600114DC2 /* AddProjectView.swift */,
 				3800AC502B6DA3C600114DC2 /* ProjectDetailsView.swift */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3800AC3F2B6D5A2600114DC2 /* AddProjectView.swift in Sources */,
+				D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */,
 				3800AC4E2B6D95FA00114DC2 /* Project+CoreDataClass.swift in Sources */,
 				3800AC4C2B6D95FA00114DC2 /* Employee+CoreDataClass.swift in Sources */,
 				3800AC2E2B6D590200114DC2 /* ContentView.swift in Sources */,
