@@ -14,11 +14,22 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List {
-                    ForEach(projects, id: \.self) { project in
-                        Section(project.wrappedProjectName) {
-                            ForEach(project.employeeArray, id: \.self) { employee in
-                                Text(employee.wrappedEmployeeName)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(projects, id: \.self) { project in
+                            NavigationLink(destination: ProjectDetailsView(project: project)) {
+                                HStack {
+                                    Text(project.wrappedProjectName)
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .padding()
+                                        .frame(maxWidth: .infinity, minHeight: 150)
+                                        .background(Color.blue)
+                                        .cornerRadius(10)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.horizontal)
+                                .padding(.top, 10)
                             }
                         }
                     }

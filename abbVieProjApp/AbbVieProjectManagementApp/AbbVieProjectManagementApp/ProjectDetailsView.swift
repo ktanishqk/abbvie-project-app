@@ -2,17 +2,20 @@
 //  ProjectDetailsView.swift
 //  AbbVieProjectManagementApp
 //
-//  Created by Alfredo Sandoval-Luis on 2/2/24.
+//  Created by Sandoval-Luis, Alfredo on 2/6/24.
 //
 
 import SwiftUI
 
 struct ProjectDetailsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    var project: Project
 
-#Preview {
-    ProjectDetailsView()
+    var body: some View {
+        VStack {
+            Text(project.wrappedProjectName)
+                .font(.largeTitle)
+                .padding()
+        }
+        .navigationBarTitle(Text(project.wrappedProjectName), displayMode: .inline)
+    }
 }
