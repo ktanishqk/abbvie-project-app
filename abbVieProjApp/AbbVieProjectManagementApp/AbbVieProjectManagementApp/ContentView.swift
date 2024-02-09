@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var isAddProjectViewPresented = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ScrollView {
                     LazyVStack {
@@ -27,6 +27,7 @@ struct ContentView: View {
                                         .background(Color.blue)
                                         .cornerRadius(10)
                                         .foregroundColor(.white)
+                                        .navigationBarBackButtonHidden(true)
                                 }
                                 .padding(.horizontal)
                                 .padding(.top, 10)
@@ -34,18 +35,21 @@ struct ContentView: View {
                         }
                     }
                 }
-
-                Button("Add Project") {
-                    isAddProjectViewPresented.toggle()
-                }
                 .padding()
             }
-            .sheet(isPresented: $isAddProjectViewPresented) {
-                AddProjectView(isPresented: $isAddProjectViewPresented, onDismiss: fetchProjects)
-                    .environment(\.managedObjectContext, moc)
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Add Project") {
+                        isAddProjectViewPresented.toggle()
+                    }
+                }
             }
-            .navigationTitle("Project Management")
-            .onAppear(perform: fetchProjects)
+                .sheet(isPresented: $isAddProjectViewPresented) {
+                    AddProjectView(isPresented: $isAddProjectViewPresented, onDismiss: fetchProjects)
+                        .environment(\.managedObjectContext, moc)
+                }
+                .navigationTitle("Project Management")
+                .onAppear(perform: fetchProjects)
         }
     }
 

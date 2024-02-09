@@ -19,6 +19,8 @@
 		3800AC4E2B6D95FA00114DC2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */; };
 		3800AC4F2B6D95FA00114DC2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */; };
 		6A48A4B92B73326600BDB26C /* ProjectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */; };
+		6A48A4BD2B76A1C400BDB26C /* ProjectTextCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */; };
+		6A48A4BF2B76D4FF00BDB26C /* AddEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */; };
 		D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsView.swift; sourceTree = "<group>"; };
+		6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTextCardsView.swift; sourceTree = SOURCE_ROOT; };
+		6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeView.swift; sourceTree = "<group>"; };
 		D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 				3800AC2D2B6D590200114DC2 /* ContentView.swift */,
 				3800AC3E2B6D5A2600114DC2 /* AddProjectView.swift */,
 				6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */,
+				6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */,
+				6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */,
 				3800AC392B6D598A00114DC2 /* AbbVieProjectManagementApp.xcdatamodeld */,
 				3800AC3C2B6D5A0E00114DC2 /* DataController.swift */,
 				3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */,
@@ -172,7 +178,9 @@
 				3800AC3D2B6D5A0E00114DC2 /* DataController.swift in Sources */,
 				3800AC2C2B6D590200114DC2 /* AbbVieProjectManagementAppApp.swift in Sources */,
 				3800AC3B2B6D598A00114DC2 /* AbbVieProjectManagementApp.xcdatamodeld in Sources */,
+				6A48A4BF2B76D4FF00BDB26C /* AddEmployeeView.swift in Sources */,
 				3800AC4F2B6D95FA00114DC2 /* Project+CoreDataProperties.swift in Sources */,
+				6A48A4BD2B76A1C400BDB26C /* ProjectTextCardsView.swift in Sources */,
 				3800AC4D2B6D95FA00114DC2 /* Employee+CoreDataProperties.swift in Sources */,
 				6A48A4B92B73326600BDB26C /* ProjectDetailsView.swift in Sources */,
 			);
