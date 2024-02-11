@@ -11,7 +11,7 @@ struct HomePage: View {
     @Environment(\.managedObjectContext) var moc
 
         var body: some View {
-            NavigationView {
+            NavigationStack {
                 VStack {
                     Spacer()
                     Image("Abbvie Logo")

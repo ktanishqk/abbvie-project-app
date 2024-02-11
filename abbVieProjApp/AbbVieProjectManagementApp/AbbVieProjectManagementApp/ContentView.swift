@@ -12,11 +12,12 @@ struct ContentView: View {
     @State private var isAddProjectViewPresented = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 List {
                     ForEach(projects, id: \.self) { project in
-                        Section(project.wrappedProjectName) {
+                        Section(project.wrappedProjectName)
+                        {
                             ForEach(project.employeeArray, id: \.self) { employee in
                                 Text(employee.wrappedEmployeeName)
                             }
@@ -38,7 +39,6 @@ struct ContentView: View {
         }
     }
 
-    // Function to fetch projects
     private func fetchProjects() {
         do {
             projects = try moc.fetch(Project.fetchRequest())

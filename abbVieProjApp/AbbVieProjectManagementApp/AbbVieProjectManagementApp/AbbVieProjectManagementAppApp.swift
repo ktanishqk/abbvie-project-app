@@ -13,6 +13,7 @@ struct AbbVieProjectManagementAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+            // Leads to the home page and gives it the object context with the core data container's permission to access the core data stack
             HomePage()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }

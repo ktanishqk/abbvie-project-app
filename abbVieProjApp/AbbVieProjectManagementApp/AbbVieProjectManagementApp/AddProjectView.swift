@@ -19,9 +19,9 @@ struct AddProjectView: View {
     var onDismiss: () -> Void
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                TextField("Project Name", text: $projectName)
+                TextField("Project Name", text: $projectName) // Name of Field and Binding to variable
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
@@ -29,7 +29,7 @@ struct AddProjectView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
 
-                DatePicker("End Date", selection: $projectEndDate, displayedComponents: .date)
+                DatePicker("End Date", selection: $projectEndDate, in: Date.now..., displayedComponents: .date)
                     .padding()
 
                 List(employees, id: \.self) { employee in
