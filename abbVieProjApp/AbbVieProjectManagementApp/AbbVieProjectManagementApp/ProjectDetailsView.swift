@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProjectDetailsView: View {
     @Environment(\.managedObjectContext) private var moc
@@ -38,7 +39,6 @@ struct ProjectDetailsView: View {
                 }
             }
         }
-        //.navigationBarHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Add Employee") {
@@ -47,18 +47,29 @@ struct ProjectDetailsView: View {
             }
         }
         .sheet(isPresented: $isAddEmployeeViewPresented) {
-            AddEmployeeView(isPresented: $isAddEmployeeViewPresented, onDismiss: fetchEmployees)
+            AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {
+                self.fetchEmployees(forProject: self.project)
+            })
             .environment(\.managedObjectContext, moc)
         }
         .navigationTitle("Project Details")
-        .onAppear(perform: fetchEmployees)
+        .onAppear{
+            self.fetchEmployees(forProject: self.project)
+        }
     }
     
-    private func fetchEmployees() {
+    
+    private func fetchEmployees(forProject project: Project) {
+        let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
+        let predicate = NSPredicate(format: "ANY project == %@", project)
+        fetchRequest.predicate = predicate
+
         do {
-            employees = try moc.fetch(Employee.fetchRequest())
+            let fetchedEmployees = try moc.fetch(fetchRequest)
+            print("Fetched \(fetchedEmployees.count) employees for project \(project.wrappedProjectName)")
+            self.employees = fetchedEmployees
         } catch {
-            print("Error fetching projects: \(error.localizedDescription)")
+            print("Error fetching employees for project: \(error.localizedDescription)")
         }
     }
     

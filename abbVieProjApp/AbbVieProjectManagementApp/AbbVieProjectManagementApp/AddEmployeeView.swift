@@ -10,9 +10,10 @@ import SwiftUI
 struct AddEmployeeView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Project.entity(), sortDescriptors: []) var projects: FetchedResults<Project>
-
+    
     @State private var employeeName = ""
-    // Add employee position options
+    
+    var project: Project
     
     @Binding var isPresented: Bool
     var onDismiss: () -> Void
@@ -28,6 +29,9 @@ struct AddEmployeeView: View {
                     let newEmployee = Employee(context: moc)
                     newEmployee.employeeName = employeeName
                     newEmployee.employeeId = UUID()
+                    
+                    // add the current project to the new employees project set
+                    newEmployee.addToProject(project)
                     
                     try? moc.save()
                     

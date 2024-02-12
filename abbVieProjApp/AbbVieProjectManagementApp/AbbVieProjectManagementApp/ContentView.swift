@@ -8,58 +8,49 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @State private var projects: [Project] = []
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\Project.projectName, order: .forward)
+    ]) var projects: FetchedResults<Project>
     @State private var isAddProjectViewPresented = false
-
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScrollView {
-                    LazyVStack {
-                        ForEach(projects, id: \.self) { project in
-                            NavigationLink(destination: ProjectDetailsView(project: project)) {
-                                HStack {
-                                    Text(project.wrappedProjectName)
-                                        .font(.title)
-                                        .fontWeight(.bold)
-                                        .padding()
-                                        .frame(maxWidth: .infinity, minHeight: 150)
-                                        .background(Color.blue)
-                                        .cornerRadius(10)
-                                        .foregroundColor(.white)
-                                        .navigationBarBackButtonHidden(true)
-                                }
-                                .padding(.horizontal)
-                                .padding(.top, 10)
-                            }
+        NavigationView {
+            List {
+                ForEach(projects, id: \.self) { project in
+                    NavigationLink(destination: ProjectDetailsView(project: project)) {
+                        HStack {
+                            ProjectTitleView(text: project.wrappedProjectName)
                         }
                     }
                 }
-                .padding()
+                .onDelete(perform: deleteProjects)
             }
-            .toolbar{
+            .navigationTitle("Project Management")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Add Project") {
                         isAddProjectViewPresented.toggle()
                     }
                 }
             }
-                .sheet(isPresented: $isAddProjectViewPresented) {
-                    AddProjectView(isPresented: $isAddProjectViewPresented, onDismiss: fetchProjects)
-                        .environment(\.managedObjectContext, moc)
-                }
-                .navigationTitle("Project Management")
-                .onAppear(perform: fetchProjects)
+            .sheet(isPresented: $isAddProjectViewPresented) {
+                AddProjectView(isPresented: $isAddProjectViewPresented, onDismiss: {
+                    // This closure is called when AddProjectView is dismissed.
+                })
+                .environment(\.managedObjectContext, moc)
+            }
         }
     }
-
-    // Function to fetch projects
-    private func fetchProjects() {
-        do {
-            projects = try moc.fetch(Project.fetchRequest())
-        } catch {
-            print("Error fetching projects: \(error.localizedDescription)")
+    
+    func deleteProjects(at offsets: IndexSet) {
+        for offset in offsets {
+            let project = projects[offset]
+            moc.delete(project)
         }
+        
+        try? moc.save()
     }
 }
-

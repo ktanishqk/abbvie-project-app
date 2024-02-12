@@ -13,7 +13,7 @@ struct AbbVieProjectManagementAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
