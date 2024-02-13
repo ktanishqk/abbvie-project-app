@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct ContentView: View {
+struct ProjectListView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\Project.projectName, order: .forward)
@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var isAddProjectViewPresented = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(projects, id: \.self) { project in
                     NavigationLink(destination: ProjectDetailsView(project: project)) {

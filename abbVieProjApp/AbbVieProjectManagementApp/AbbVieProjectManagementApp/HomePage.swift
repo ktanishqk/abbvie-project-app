@@ -11,7 +11,7 @@ struct HomePage: View {
     @Environment(\.managedObjectContext) var moc
 
         var body: some View {
-            NavigationView {
+            NavigationStack {
                 VStack {
                     Spacer()
                     Image("Abbvie Logo")
@@ -19,8 +19,17 @@ struct HomePage: View {
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                     Spacer()
-
-                    NavigationLink(destination: ContentView().environment(\.managedObjectContext, moc)) {
+                    
+                    NavigationLink(destination: EmployeeListView()) {
+                                        Text("View Employees")
+                                            .padding()
+                                            .background(Color.blue)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(10)
+                                    }
+                                    .padding()
+                    
+                    NavigationLink(destination: ProjectListView().environment(\.managedObjectContext, moc)) {
                         Text("View Projects")
                             .padding()
                             .background(Color.blue)

@@ -35,7 +35,9 @@ struct ProjectDetailsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 ForEach(employees, id: \.self) { employee in
-                    ProjectTextCardsView(text: employee.wrappedEmployeeName)
+                    NavigationLink(destination: EmployeeView(employee: employee)) {
+                            ProjectTextCardsView(text: employee.wrappedEmployeeName)
+                        }
                 }
             }
         }
