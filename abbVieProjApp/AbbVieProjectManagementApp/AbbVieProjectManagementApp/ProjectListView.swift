@@ -1,8 +1,11 @@
 //
-//  ContentView.swift
+//  ProjectListView.swift
 //  AbbVieProjectManagementApp
 //
-//  Created by Alfredo Sandoval-Luis on 2/2/24.
+//  Created by Khurana, Tanishq on 2/13/24.
+//
+//  Was previously ContentView, split into
+//  ProjectListView and EmployeeListView
 //
 import SwiftUI
 
@@ -20,6 +23,13 @@ struct ProjectListView: View {
                     NavigationLink(destination: ProjectDetailsView(project: project)) {
                         HStack {
                             ProjectTitleView(text: project.wrappedProjectName)
+                            
+                            VStack(alignment: .leading) {
+                                ForEach(project.employeeArray, id: \.self) { employee in
+                                    //Text(employee.wrappedEmployeeName)
+                                    ProjectTextCardsView(text: employee.wrappedEmployeeName)
+                                }
+                            }
                         }
                     }
                 }

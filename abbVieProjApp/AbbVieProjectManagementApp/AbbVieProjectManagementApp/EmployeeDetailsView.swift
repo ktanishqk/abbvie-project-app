@@ -1,5 +1,5 @@
 //
-//  EmployeeView.swift
+//  EmployeeDetailsView.swift
 //  AbbVieProjectManagementApp
 //
 //  Created by Khurana, Tanishq on 2/13/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EmployeeView: View {
+struct EmployeeDetailsView: View {
     let employee: Employee
 
     var body: some View {

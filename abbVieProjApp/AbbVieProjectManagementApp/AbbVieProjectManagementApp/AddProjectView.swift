@@ -19,7 +19,7 @@ struct AddProjectView: View {
     var onDismiss: () -> Void
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 TextField("Project Name", text: $projectName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
