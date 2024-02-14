@@ -62,7 +62,7 @@ struct AddProjectView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Generat Project")
+            .navigationTitle("Project Details")
         }
     }
 
