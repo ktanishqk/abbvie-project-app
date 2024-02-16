@@ -42,7 +42,7 @@ struct GenerateEmployeeView: View {
                     newEmployee.employeeId = UUID()
 
                     // add the current project to the new employees project set
-                    newEmployee.addToProject(project)
+//                    newEmployee.addToProject(project)
 
                     try? moc.save()
 

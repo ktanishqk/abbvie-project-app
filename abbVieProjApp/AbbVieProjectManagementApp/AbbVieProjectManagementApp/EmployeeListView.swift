@@ -35,23 +35,32 @@ struct EmployeeListView: View {
             .searchable(text: $searchText)
             .navigationTitle("Employees")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Generate Employee") {
-                        isGenerateEmployeeSheetPresented = true
+                ToolbarItem {
+                    Menu {
+                        Button("Generate Employee") {
+                            isGenerateEmployeeSheetPresented = true
+                        }
+                        EditButton()
+                    } label: {
+                        Label("Menu", systemImage: "ellipsis.circle")
                     }
+                    .menuOrder(.fixed)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
+            }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    
+//                    
+//                }
 //                ToolbarItem(placement: .navigationBarLeading) {
-//                    Button(action: {
-//                        presentationMode.wrappedValue.dismiss()
-//                    }) {
-//                        Image(systemName: "chevron.left")
+//                    
+//                        Button(action: {
+//                            presentationMode.wrappedValue.dismiss()
+//                        }) {
+//                            Image(systemName: "chevron.left")
+//                        }
 //                    }
 //                }
-            }
-
+//            }
             .sheet(isPresented: $isGenerateEmployeeSheetPresented) {
                 GenerateEmployeeView(project: Project(), isPresented: $isGenerateEmployeeSheetPresented, onDismiss: {})
                     .environment(\.managedObjectContext, moc)
