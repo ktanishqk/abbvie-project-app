@@ -9,50 +9,54 @@ import SwiftUI
 
 struct AddEmployeeView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Project.entity(), sortDescriptors: []) var projects: FetchedResults<Project>
-    
-    @State private var employeeName = ""
-    @State private var employeePosition = ""
+    @FetchRequest(entity: Employee.entity(), sortDescriptors: []) var employees: FetchedResults<Employee>
     
     var project: Project
-    let positions = ["UX Designer", "Softwre Dev", "Front-End Dev", "Back-End Dev", "Project Manager"]
-    
     @Binding var isPresented: Bool
     var onDismiss: () -> Void
     
+    let positions = ["All"] + ["UX Designer", "Software Dev", "Front-End Dev", "Back-End Dev", "Project Manager"]
+    @State private var selectedPosition = "All"
+    @State private var filteredEmployees: [Employee] = []
+    
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                    TextField("Employee Name", text: $employeeName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    
-                    Picker("Position", selection: $employeePosition) {
-                        ForEach(positions, id:\.self) {
-                            Text($0)
-                        }
+            VStack {
+                Picker("Filter by Position", selection: $selectedPosition) {
+                    ForEach(positions, id: \.self) { position in
+                        Text(position)
                     }
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                Picker("Select Employee", selection: $selectedEmployee) {
+                    ForEach(filteredEmployees, id: \.self) { employee in
+                        Text(employee.wrappedEmployeeName)
+                    }
+                }
+                .pickerStyle(WheelPickerStyle())
+                .padding()
                 
                 Button("Add Employee") {
-                    let newEmployee = Employee(context: moc)
-                    newEmployee.employeeName = employeeName
-                    newEmployee.employeePosition = employeePosition
-                    newEmployee.employeeId = UUID()
-                    
-                    // add the current project to the new employees project set
-                    newEmployee.addToProject(project)
-                    
+                    if let selectedEmployee = selectedEmployee {
+                        selectedEmployee.addToProject(project)
+                    }
                     try? moc.save()
-                    
-                    employeeName = ""
                     isPresented = false
                     onDismiss()
                 }
                 .padding()
             }
-            .navigationTitle("Generate Employee")
+            .navigationTitle("Add Employee")
+            .onAppear {
+                filteredEmployees = employees.filter { selectedPosition == "All" || $0.employeePosition == selectedPosition }
+            }
+            .onChange(of: selectedPosition) { _ in
+                filteredEmployees = employees.filter { selectedPosition == "All" || $0.employeePosition == selectedPosition }
+            }
         }
     }
+    
+    @State private var selectedEmployee: Employee?
 }

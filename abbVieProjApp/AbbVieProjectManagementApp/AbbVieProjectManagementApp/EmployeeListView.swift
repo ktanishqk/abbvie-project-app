@@ -20,6 +20,7 @@ struct EmployeeListView: View {
     ) var employees: FetchedResults<Employee>
 
     @State private var searchText = ""
+    @State private var isGenerateEmployeeSheetPresented = false
 
     var body: some View {
         NavigationStack {
@@ -35,20 +36,27 @@ struct EmployeeListView: View {
             .navigationTitle("Employees")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Generate Employee") {
+                        isGenerateEmployeeSheetPresented = true
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    Button(action: {
+//                        presentationMode.wrappedValue.dismiss()
+//                    }) {
+//                        Image(systemName: "chevron.left")
+//                    }
+//                }
             }
-        }
-        .navigationBarTitle("", displayMode: .inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left")
-                }
+
+            .sheet(isPresented: $isGenerateEmployeeSheetPresented) {
+                GenerateEmployeeView(project: Project(), isPresented: $isGenerateEmployeeSheetPresented, onDismiss: {})
+                    .environment(\.managedObjectContext, moc)
             }
+
         }
     }
     

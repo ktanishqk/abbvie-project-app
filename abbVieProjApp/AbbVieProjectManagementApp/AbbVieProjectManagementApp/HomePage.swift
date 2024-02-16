@@ -21,7 +21,7 @@ struct HomePage: View {
                     .cornerRadius(10)
                 Spacer()
                 
-                NavigationLink(destination: EmployeeListView()) {
+                NavigationLink(destination: EmployeeListView().environment(\.managedObjectContext, moc)) {
                     HomePageLinksView(text: "Employees")
                 }
                 .padding()

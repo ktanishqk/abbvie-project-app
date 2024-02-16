@@ -25,6 +25,7 @@
 		6A48A4C42B7D64C700BDB26C /* HomePageLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4C32B7D64C700BDB26C /* HomePageLinksView.swift */; };
 		D13ADC242B7C098800DD7721 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC232B7C098800DD7721 /* EmployeeListView.swift */; };
 		D13ADC262B7C12DE00DD7721 /* EmployeeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC252B7C12DE00DD7721 /* EmployeeDetailsView.swift */; };
+		D13ADC282B7FF9FF00DD7721 /* GenerateEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */; };
 		D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		6A48A4C32B7D64C700BDB26C /* HomePageLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageLinksView.swift; sourceTree = "<group>"; };
 		D13ADC232B7C098800DD7721 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		D13ADC252B7C12DE00DD7721 /* EmployeeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsView.swift; sourceTree = "<group>"; };
+		D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateEmployeeView.swift; sourceTree = "<group>"; };
 		D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		3800AC2A2B6D590200114DC2 /* AbbVieProjectManagementApp */ = {
 			isa = PBXGroup;
 			children = (
+				D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */,
 				3800AC2B2B6D590200114DC2 /* AbbVieProjectManagementAppApp.swift */,
 				D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */,
 				3800AC2D2B6D590200114DC2 /* ProjectListView.swift */,
@@ -192,6 +195,7 @@
 			files = (
 				3800AC3F2B6D5A2600114DC2 /* AddProjectView.swift in Sources */,
 				6A48A4C12B7AB72B00BDB26C /* ProjectTitleView.swift in Sources */,
+				D13ADC282B7FF9FF00DD7721 /* GenerateEmployeeView.swift in Sources */,
 				D13ADC242B7C098800DD7721 /* EmployeeListView.swift in Sources */,
 				D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */,
 				3800AC4E2B6D95FA00114DC2 /* Project+CoreDataClass.swift in Sources */,
