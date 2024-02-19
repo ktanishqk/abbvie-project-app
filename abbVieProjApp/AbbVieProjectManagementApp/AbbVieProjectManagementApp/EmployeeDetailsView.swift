@@ -31,5 +31,8 @@ struct EmployeeDetailsView: View {
             }
         }
         .navigationTitle("Employee")
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButton())
     }
 }

@@ -19,12 +19,12 @@
 		3800AC4E2B6D95FA00114DC2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */; };
 		3800AC4F2B6D95FA00114DC2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */; };
 		6A48A4B92B73326600BDB26C /* ProjectDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */; };
-		6A48A4BD2B76A1C400BDB26C /* ProjectTextCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */; };
 		6A48A4BF2B76D4FF00BDB26C /* AddEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */; };
-		6A48A4C12B7AB72B00BDB26C /* ProjectTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4C02B7AB72B00BDB26C /* ProjectTitleView.swift */; };
 		6A48A4C42B7D64C700BDB26C /* HomePageLinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A48A4C32B7D64C700BDB26C /* HomePageLinksView.swift */; };
 		6A8AF20C2B801AD100B5703C /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF20B2B801AD100B5703C /* ProjectCardView.swift */; };
 		6A8AF20E2B801AE000B5703C /* ProjectTextBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF20D2B801AE000B5703C /* ProjectTextBubbleView.swift */; };
+		6A8AF2102B83E29D00B5703C /* ProjectTextCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF20F2B83E29D00B5703C /* ProjectTextCardsView.swift */; };
+		6A8AF2122B84010B00B5703C /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8AF2112B84010B00B5703C /* CustomBackButton.swift */; };
 		D13ADC242B7C098800DD7721 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC232B7C098800DD7721 /* EmployeeListView.swift */; };
 		D13ADC262B7C12DE00DD7721 /* EmployeeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC252B7C12DE00DD7721 /* EmployeeDetailsView.swift */; };
 		D13ADC282B7FF9FF00DD7721 /* GenerateEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */; };
@@ -45,12 +45,12 @@
 		3800AC4A2B6D95FA00114DC2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		3800AC4B2B6D95FA00114DC2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsView.swift; sourceTree = "<group>"; };
-		6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectTextCardsView.swift; path = AbbVieProjectManagementApp/stylings/ProjectTextCardsView.swift; sourceTree = SOURCE_ROOT; };
 		6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeView.swift; sourceTree = "<group>"; };
-		6A48A4C02B7AB72B00BDB26C /* ProjectTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTitleView.swift; sourceTree = "<group>"; };
 		6A48A4C32B7D64C700BDB26C /* HomePageLinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageLinksView.swift; sourceTree = "<group>"; };
 		6A8AF20B2B801AD100B5703C /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		6A8AF20D2B801AE000B5703C /* ProjectTextBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTextBubbleView.swift; sourceTree = "<group>"; };
+		6A8AF20F2B83E29D00B5703C /* ProjectTextCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTextCardsView.swift; path = ../../../../../../.Trash/ProjectTextCardsView.swift; sourceTree = "<group>"; };
+		6A8AF2112B84010B00B5703C /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		D13ADC232B7C098800DD7721 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
 		D13ADC252B7C12DE00DD7721 /* EmployeeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsView.swift; sourceTree = "<group>"; };
 		D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateEmployeeView.swift; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 		6A48A4C22B7D645900BDB26C /* stylings */ = {
 			isa = PBXGroup;
 			children = (
-				6A48A4BC2B76A1C400BDB26C /* ProjectTextCardsView.swift */,
-				6A48A4C02B7AB72B00BDB26C /* ProjectTitleView.swift */,
+				6A8AF20F2B83E29D00B5703C /* ProjectTextCardsView.swift */,
 				6A48A4C32B7D64C700BDB26C /* HomePageLinksView.swift */,
+				6A8AF2112B84010B00B5703C /* CustomBackButton.swift */,
 			);
 			path = stylings;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3800AC3F2B6D5A2600114DC2 /* AddProjectView.swift in Sources */,
-				6A48A4C12B7AB72B00BDB26C /* ProjectTitleView.swift in Sources */,
+				6A8AF2122B84010B00B5703C /* CustomBackButton.swift in Sources */,
 				D13ADC282B7FF9FF00DD7721 /* GenerateEmployeeView.swift in Sources */,
 				D13ADC242B7C098800DD7721 /* EmployeeListView.swift in Sources */,
 				D1AB9CBF2B70B86600EE33E6 /* HomePage.swift in Sources */,
@@ -222,8 +222,8 @@
 				6A48A4BF2B76D4FF00BDB26C /* AddEmployeeView.swift in Sources */,
 				3800AC4F2B6D95FA00114DC2 /* Project+CoreDataProperties.swift in Sources */,
 				6A48A4C42B7D64C700BDB26C /* HomePageLinksView.swift in Sources */,
-				6A48A4BD2B76A1C400BDB26C /* ProjectTextCardsView.swift in Sources */,
 				3800AC4D2B6D95FA00114DC2 /* Employee+CoreDataProperties.swift in Sources */,
+				6A8AF2102B83E29D00B5703C /* ProjectTextCardsView.swift in Sources */,
 				6A8AF20E2B801AE000B5703C /* ProjectTextBubbleView.swift in Sources */,
 				6A48A4B92B73326600BDB26C /* ProjectDetailsView.swift in Sources */,
 				6A8AF20C2B801AD100B5703C /* ProjectCardView.swift in Sources */,

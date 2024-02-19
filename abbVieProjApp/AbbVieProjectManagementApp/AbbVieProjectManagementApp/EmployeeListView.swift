@@ -47,26 +47,15 @@ struct EmployeeListView: View {
                     .menuOrder(.fixed)
                 }
             }
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    
-//                    
-//                }
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    
-//                        Button(action: {
-//                            presentationMode.wrappedValue.dismiss()
-//                        }) {
-//                            Image(systemName: "chevron.left")
-//                        }
-//                    }
-//                }
-//            }
             .sheet(isPresented: $isGenerateEmployeeSheetPresented) {
                 GenerateEmployeeView(project: Project(), isPresented: $isGenerateEmployeeSheetPresented, onDismiss: {})
                     .environment(\.managedObjectContext, moc)
             }
 
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: CustomBackButton())
     }
     
     func deleteEmployees(at offsets: IndexSet) {

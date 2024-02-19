@@ -32,11 +32,14 @@ extension Employee {
 
     public var projectArray: [Project] {
         let set = project as? Set<Project> ?? []
-        // how we are sorting projects, currently by name
-        // there are other options
         return set.sorted {
             $0.wrappedProjectName < $1.wrappedProjectName
         }
+    }
+    
+    public var wrappedEmployeeFirstName: String {
+        guard let fullName = employeeName else { return "Unknown" }
+        return fullName.components(separatedBy: " ").first ?? "Unknown"
     }
 
 }

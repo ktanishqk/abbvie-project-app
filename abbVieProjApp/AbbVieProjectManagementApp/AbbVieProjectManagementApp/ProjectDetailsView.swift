@@ -29,10 +29,23 @@ struct ProjectDetailsView: View {
                 ProjectTextCardsView(text: "Project End Date: \(dateFormatter(project.wrappedProjectEndDate))")
                     .padding(.vertical)
                 
-                Text("Employees:")
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+//                Text("Employees:")
+//                    .font(.headline)
+//                    .padding()
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text("Employees:")
+                        .font(.headline)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Spacer()
+                    
+                    Button("Add Employee") {
+                        isAddEmployeeViewPresented = true
+                    }
+                    .padding(.horizontal, 15)
+                }
                 
                 ForEach(employees, id: \.self) { employee in
                     NavigationLink(destination: EmployeeDetailsView(employee: employee)) {
@@ -41,13 +54,13 @@ struct ProjectDetailsView: View {
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Add Employee") {
-                    isAddEmployeeViewPresented = true
-                }
-            }
-        }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                Button("Add Employee") {
+//                    isAddEmployeeViewPresented = true
+//                }
+//            }
+//        }
         .sheet(isPresented: $isAddEmployeeViewPresented) {
             AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {
                 self.fetchEmployees(forProject: self.project)

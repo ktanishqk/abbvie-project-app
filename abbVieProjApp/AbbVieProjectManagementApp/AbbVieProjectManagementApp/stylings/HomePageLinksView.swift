@@ -14,7 +14,7 @@ struct HomePageLinksView: View {
         Text(text)
             .frame(width: 200)
             .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
-            .background(Color(red: 7/255, green: 29/255, blue: 100/255))
+            .background(Color(red: 7/255, green: 29/255, blue: 73/255))
             .foregroundColor(.white)
             .cornerRadius(20)
             .font(.largeTitle)

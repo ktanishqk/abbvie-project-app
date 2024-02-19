@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct ProjectTextBubbleView: View {
-    var namesOf: String
+    var text: String
     
     var body: some View {
         HStack{
-            Text(namesOf)
+            Text(text)
                 .foregroundColor(.white)
                 .padding(.horizontal)
                 .padding(.vertical, 8)
-                //.background(Color.blue.opacity(1))
                 .background(Color.white.opacity(0.2))
                 .clipShape(Capsule())
-                .fixedSize() // Fixed size capsule
                 .frame(maxWidth: 100)
-                .lineLimit(0) // Ensure only one line of text
-                .truncationMode(.middle) // Replace overflowing text with ellipsis in the middle
+                //.fixedSize()
+                //.lineLimit(1)
+                //.truncationMode(.middle)
             
             Spacer()
         }
@@ -30,5 +29,5 @@ struct ProjectTextBubbleView: View {
 }
 
 #Preview {
-    ProjectTextBubbleView(namesOf: "Alfredo")
+    ProjectTextBubbleView(text: "Alfredo")
 }
