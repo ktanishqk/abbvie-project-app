@@ -33,7 +33,7 @@ struct EmployeeListView: View {
                 .onDelete(perform: deleteEmployees)
             }
             .searchable(text: $searchText)
-            .navigationTitle("Employees")
+            //.navigationTitle("Employees")
             .toolbar {
                 ToolbarItem {
                     Menu {
@@ -43,6 +43,7 @@ struct EmployeeListView: View {
                         EditButton()
                     } label: {
                         Label("Menu", systemImage: "ellipsis.circle")
+                            .foregroundStyle(Color(red: 7/255, green: 29/255, blue: 73/255))
                     }
                     .menuOrder(.fixed)
                 }

@@ -52,7 +52,7 @@ struct AddEmployeeView: View {
             .onAppear {
                 filteredEmployees = employees.filter { selectedPosition == "All" || $0.employeePosition == selectedPosition }
             }
-            .onChange(of: selectedPosition) { _ in
+            .onChange(of: selectedPosition) { //removed _in deu to deprecation
                 filteredEmployees = employees.filter { selectedPosition == "All" || $0.employeePosition == selectedPosition }
             }
         }

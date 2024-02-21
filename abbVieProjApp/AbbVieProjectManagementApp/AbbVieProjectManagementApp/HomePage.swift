@@ -22,12 +22,16 @@ struct HomePage: View {
                 Spacer()
                 
                 NavigationLink(destination: EmployeeListView().environment(\.managedObjectContext, moc)) {
-                    HomePageLinksView(text: "Employees")
+                    HomePageLinksView(text: "People")
                 }
                 .padding()
                 
                 NavigationLink(destination: ProjectListView().environment(\.managedObjectContext, moc)) {
                     HomePageLinksView(text: "Projects")
+                }
+                .padding()
+                NavigationLink(destination: ProfilePageView().environment(\.managedObjectContext, moc)) {
+                    HomePageLinksView(text: "Profile Page")
                 }
                 .padding()
             }

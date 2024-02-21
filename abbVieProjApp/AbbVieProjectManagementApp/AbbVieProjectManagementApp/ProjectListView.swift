@@ -17,14 +17,12 @@ struct ProjectListView: View {
         NavigationStack {
             ProjectCardView()
             .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    EditButton()
-//                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         isAddProjectViewPresented.toggle()
                     } label: {
                         Image(systemName: "plus")
+                            .foregroundColor(Color(red: 7/255, green: 29/255, blue: 73/255))
                     }
                 }
             }
