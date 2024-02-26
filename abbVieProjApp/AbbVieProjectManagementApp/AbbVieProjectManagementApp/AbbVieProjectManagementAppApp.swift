@@ -10,11 +10,17 @@ import SwiftUI
 @main
 struct AbbVieProjectManagementAppApp: App {
     @StateObject private var dataController = DataController()
+    @State private var isSignedIn = false
     
     var body: some Scene {
         WindowGroup {
-            HomePage()
-                            .environment(\.managedObjectContext, dataController.container.viewContext)
+            if isSignedIn {
+                HomePage()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+            } else {
+                // Pass the isSignedIn binding to the LoginView
+                LoginView(isSignedIn: $isSignedIn)
+            }
         }
     }
 }

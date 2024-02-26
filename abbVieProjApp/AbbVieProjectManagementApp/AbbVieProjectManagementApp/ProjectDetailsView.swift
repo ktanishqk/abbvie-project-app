@@ -12,19 +12,20 @@ struct ProjectDetailsView: View {
     @Environment(\.managedObjectContext) private var moc
     @State private var isAddEmployeeViewPresented = false
     @ObservedObject var project: Project
-    //@State private var employees: [Employee] = []
+    // old
+    @State private var employees: [Employee] = []
     
     // new
-    @FetchRequest var employees: FetchedResults<Employee>
+//    @FetchRequest var employees: FetchedResults<Employee>
     // new
-    init(project: Project) {
-        self.project = project
-        self._employees = FetchRequest(
-            entity: Employee.entity(),
-            sortDescriptors: [],
-            predicate: NSPredicate(format: "ANY project == %@", project)
-        )
-    }
+//    init(project: Project) {
+//        self.project = project
+//        self._employees = FetchRequest(
+//            entity: Employee.entity(),
+//            sortDescriptors: [],
+//            predicate: NSPredicate(format: "ANY project == %@", project)
+//        )
+//    }
     
     var body: some View {
         VStack {
@@ -67,20 +68,22 @@ struct ProjectDetailsView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
         // new
-        .sheet(isPresented: $isAddEmployeeViewPresented) {
-            AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {})
-                .environment(\.managedObjectContext, moc)
-        }
 //        .sheet(isPresented: $isAddEmployeeViewPresented) {
-//            AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {
-//                self.fetchEmployees(forProject: self.project)
-//            })
-//            .environment(\.managedObjectContext, moc)
+//            AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {})
+//                .environment(\.managedObjectContext, moc)
 //        }
+        // old
+        .sheet(isPresented: $isAddEmployeeViewPresented) {
+            AddEmployeeView(project: project, isPresented: $isAddEmployeeViewPresented, onDismiss: {
+                self.fetchEmployees(forProject: self.project)
+            })
+            .environment(\.managedObjectContext, moc)
+        }
         .navigationTitle("Project Details")
-//        .onAppear{
-//            self.fetchEmployees(forProject: self.project)
-//        }
+        // old
+        .onAppear{
+            self.fetchEmployees(forProject: self.project)
+        }
     }
     
     //
@@ -88,21 +91,21 @@ struct ProjectDetailsView: View {
     // by @fetchrequest in an attempt to fix refresh issue.
     // Everything commented is what made old fetch request work
     //
-//    private func fetchEmployees(forProject project: Project) {
-//        let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
-//        let predicate = NSPredicate(format: "ANY project == %@", project)
-//        fetchRequest.predicate = predicate
-//
-//        do {
-//            let fetchedEmployees = try moc.fetch(fetchRequest)
-//            print("Fetched \(fetchedEmployees.count) employees for project \(project.wrappedProjectName)")
-//            DispatchQueue.main.async {
-//                self.employees = fetchedEmployees
-//            }
-//        } catch {
-//            print("Error fetching employees for project: \(error.localizedDescription)")
-//        }
-//    }
+    private func fetchEmployees(forProject project: Project) {
+        let fetchRequest: NSFetchRequest<Employee> = Employee.fetchRequest()
+        let predicate = NSPredicate(format: "ANY project == %@", project)
+        fetchRequest.predicate = predicate
+
+        do {
+            let fetchedEmployees = try moc.fetch(fetchRequest)
+            print("Fetched \(fetchedEmployees.count) employees for project \(project.wrappedProjectName)")
+            DispatchQueue.main.async {
+                self.employees = fetchedEmployees
+            }
+        } catch {
+            print("Error fetching employees for project: \(error.localizedDescription)")
+        }
+    }
     
     func dateFormatter(_ date: Date) -> String {
         let formatter = DateFormatter()
