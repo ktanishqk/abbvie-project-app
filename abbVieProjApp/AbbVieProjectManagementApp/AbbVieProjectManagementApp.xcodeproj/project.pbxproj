@@ -98,12 +98,12 @@
 				D1AB9CBE2B70B86600EE33E6 /* HomePage.swift */,
 				3800AC2D2B6D590200114DC2 /* ProjectListView.swift */,
 				D13ADC232B7C098800DD7721 /* EmployeeListView.swift */,
-				6A8AF2132B86AAA200B5703C /* ProfilePageView.swift */,
 				6A48A4B82B73326600BDB26C /* ProjectDetailsView.swift */,
 				D13ADC252B7C12DE00DD7721 /* EmployeeDetailsView.swift */,
 				3800AC3E2B6D5A2600114DC2 /* AddProjectView.swift */,
 				D13ADC272B7FF9FF00DD7721 /* GenerateEmployeeView.swift */,
 				6A48A4BE2B76D4FF00BDB26C /* AddEmployeeView.swift */,
+				6A534DC72B92582600699F9D /* Profiles */,
 				6A8AF20A2B801A9300B5703C /* ProjectCards */,
 				6A48A4C22B7D645900BDB26C /* stylings */,
 				3800AC392B6D598A00114DC2 /* AbbVieProjectManagementApp.xcdatamodeld */,
@@ -134,6 +134,14 @@
 				6A8AF2112B84010B00B5703C /* CustomBackButton.swift */,
 			);
 			path = stylings;
+			sourceTree = "<group>";
+		};
+		6A534DC72B92582600699F9D /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				6A8AF2132B86AAA200B5703C /* ProfilePageView.swift */,
+			);
+			path = Profiles;
 			sourceTree = "<group>";
 		};
 		6A8AF20A2B801A9300B5703C /* ProjectCards */ = {

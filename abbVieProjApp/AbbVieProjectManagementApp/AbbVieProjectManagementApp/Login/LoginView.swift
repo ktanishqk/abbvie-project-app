@@ -53,6 +53,7 @@ struct LoginView: View {
                     .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }
                 .background(Color(red: 7/255, green: 29/255, blue: 73/255))
+                //simple form validation ui
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
@@ -73,7 +74,7 @@ struct LoginView: View {
 }
 
 
-// MARK: - Form authentication protocol
+// MARK: - Form validation protocol
 
 extension LoginView {
     var formIsValid: Bool {
